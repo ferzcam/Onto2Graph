@@ -56,7 +56,7 @@ public class OboFlatFileFormatter extends ViewFormat {
                 Iterator eIt = graph.edgeSet().iterator();
                 RelationshipEdge edge;
                 HashMap rootEdge, subEdge;
-                HashSet<String> relations = new HashMap<String>();
+
                 while(eIt.hasNext()){
                     edge = eIt.next()
                     edgesIndex++;

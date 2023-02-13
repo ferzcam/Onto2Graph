@@ -466,10 +466,22 @@ public class RequestManager {
                 clazz = equivalentList.get(clazz);
             }
         }
+
+	// print the class name
+	println clazz.getIRI().toString()
+	
+	def remainder = clazz.getIRI().getRemainder()
+	//check if remainder is Present and not Absent
+	if(remainder.isPresent()){
+	    remainder = remainder.get()
+	} else {
+	    return null
+	}
+	
         def info = [
                 "classURI": clazz.getIRI().toURI().toString(),
                 "ontologyURI": o.getOntologyID().getOntologyIRI().get().toString(),
-                "remainder": clazz.getIRI().getRemainder().get(),
+                "remainder": remainder,
                 "label": null,
                 "annotations" :[],
                 "definition": null,
